@@ -1,0 +1,13 @@
+{
+  "framework": null,
+  "outputDirectory": "frontend",
+  "functions": {
+    "api/index.py": {
+      "includeFiles": "{models,backend,frontend}/**",
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index" }
+  ]
+}

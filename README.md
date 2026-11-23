@@ -17,7 +17,7 @@ pet-classifier/
 ```bash
 python -m venv .venv
 .venv\Scripts\activate          # Windows   (Mac/Linux: source .venv/bin/activate)
-pip install -r requirements.txt
+pip install -r requirements-train.txt
 ```
 GPU NVIDIA? Install torch CUDA dulu dari https://pytorch.org/get-started/locally/ (opsional, CPU juga bisa tapi lambat).
 
@@ -46,10 +46,10 @@ Selesai → `models/pet_classifier.onnx` dan `models/labels.json`.
 
 ## 5. Jalankan aplikasi (lokal)
 ```bash
-uvicorn backend.app:app --reload --port 8000
+uvicorn backend.app:app --reload --port 8010
 ```
-Buka **http://localhost:8000** (frontend disajikan oleh backend yang sama).
-Dokumentasi API otomatis: http://localhost:8000/docs
+Buka **http://127.0.0.1:8010** (frontend disajikan oleh backend yang sama).
+Dokumentasi API otomatis: http://127.0.0.1:8010/docs
 
 ## 6. Online (opsional)
 - Cepat/sementara: `ngrok http 8000` atau Cloudflare Tunnel.
@@ -61,3 +61,9 @@ Dokumentasi API otomatis: http://localhost:8000/docs
 - **Usia butuh label usia.** Kalau dataset hanya berisi kucing/anjing + jenis, head usia otomatis tidak dilatih dan UI memberi tahu. Tambahkan folder usia (mis. `cat/siamese/kitten/`) agar aktif.
 - Usia diprediksi sebagai 3 kelompok (anak < 1 th, dewasa 1–7 th, tua > 7 th), bukan angka tahun, karena label berbasis foto tidak akurat untuk angka pasti.
 - Model hanya mengenal kucing & anjing; foto objek lain tetap dipaksa jadi salah satunya (UI menandai keyakinan rendah).
+
+## Deploy online
+- **Render**: lihat `render.yaml` (build: `pip install -r requirements.txt`).
+- **Vercel**: `api/index.py` + `vercel.json`. Import repositori di vercel.com, tanpa framework, lalu Deploy.
+  Halaman web di `/`, API di `/api/predict` dan `/api/health`.
+- `requirements.txt` = paket server (ringan). `requirements-train.txt` = paket untuk training.

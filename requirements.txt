@@ -1,12 +1,5 @@
-torch>=2.2
-torchvision>=0.17
-onnx>=1.15
-onnxruntime>=1.17
-numpy
-pandas
-pillow
-tqdm
-gdown
 fastapi
-uvicorn[standard]
 python-multipart
+onnxruntime
+numpy
+pillow
