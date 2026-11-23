@@ -1,0 +1,46 @@
+{
+  "species": [
+    "cat",
+    "dog"
+  ],
+  "breeds": [
+    "british_shorthair_scottish_mix",
+    "domestic_shorthair_kampung_dsh",
+    "labrador_mixed_breed_shorthair",
+    "lokal_kampung_mixed_breed",
+    "mix_shih_tzu_fluffy_puppy",
+    "persian_domestic_longhair_mix",
+    "poodle_maltese_fluffy_longhair_mix",
+    "ragdoll_birman_mix",
+    "rottweiler_doberman_hound_mix",
+    "siamese_burmese_mix",
+    "siberian_husky_shepherd_mix",
+    "terrier_pitbull_bulldog_shorthair_mix"
+  ],
+  "breed_species": [
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1
+  ],
+  "age_classes": [
+    "anak",
+    "dewasa",
+    "tua"
+  ],
+  "age_available": false,
+  "img_size": 224,
+  "age_ranges": {
+    "anak": "sekitar < 1 tahun",
+    "dewasa": "sekitar 1 - 7 tahun",
+    "tua": "sekitar > 7 tahun"
+  }
+}
